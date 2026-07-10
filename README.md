@@ -2,13 +2,15 @@
 
 <img src="logo.png" alt="Logo" width="200"/>
 
-### *One Image to rule them all*
-
 [![Azure DevOps](https://img.shields.io/badge/Azure%20DevOps-Pipeline-0078D7?style=for-the-badge&logo=azure-devops&logoColor=white)](https://dev.azure.com)
 [![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)](https://ubuntu.com)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
 </div>
+
+> **Scope:** this pipeline is a connectivity checklist for a custom Ubuntu build
+> image, not a blocking quality gate. Every job runs with `continueOnError: true`,
+> so a red step surfaces a broken tool or service connection without failing the
+> run.
 
 
 ## Pipeline Roadmap
@@ -72,7 +74,7 @@ Validates Nexus Repository Manager access.
 
 ## Configuration
 
-Update `azure-pipelines.yml` with your environment:
+Update `default.yml` with your environment:
 ```yaml
 pool:
   name: your-build-agent-pool
@@ -116,7 +118,7 @@ variables:
 ## Project Structure
 ```
 .
-├── azure-pipelines.yml          # Main pipeline definition
+├── default.yml                  # Main pipeline definition
 ├── logo.png                     # Project logo
 ├── Azure_Pipeline.png           # Architecture diagram
 ├── photo.png                    # Pipeline roadmap
